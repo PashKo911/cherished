@@ -23,6 +23,7 @@
 	opacity: 0;
 	visibility: hidden;
 	will-change: transform, visibility, opacity;
+	overflow: hidden;
 
 	.loaded &.hero__button {
 		animation: from-bottom 0.3s ease 1.7s forwards;
@@ -38,8 +39,18 @@
 		height: 100%;
 		position: absolute;
 		top: 0%;
-		right: 15%;
+		left: -40%;
 		background: url('@img/hero/button-decor.svg') 0 0 no-repeat;
+		animation: run-decor 3s infinite forwards;
+	}
+
+	@keyframes run-decor {
+		0% {
+			left: -20%;
+		}
+		100% {
+			left: 120%;
+		}
 	}
 
 	span {
@@ -174,4 +185,481 @@
 	.item-rates__list & p::before {
 		display: none;
 	}
+}
+
+//Анімація заголовків Hero========================================================================================================================================================
+
+svg .svg-title-1 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.7s;
+}
+
+.loaded svg .svg-title-1 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-2 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.8s;
+}
+
+.loaded svg .svg-title-2 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-3 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.9s;
+}
+
+.loaded svg .svg-title-3 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-4 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2s;
+}
+
+.loaded svg .svg-title-4 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-5 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.1s;
+}
+
+.loaded svg .svg-title-5 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-6 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.2s;
+}
+
+.loaded svg .svg-title-6 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-7 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.3s;
+}
+
+.loaded svg .svg-title-7 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-8 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.4s;
+}
+
+.loaded svg .svg-title-8 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-9 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.5s;
+}
+
+.loaded svg .svg-title-9 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-10 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.6s;
+}
+
+.loaded svg .svg-title-10 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-11 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.7s;
+}
+
+.loaded svg .svg-title-11 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-12 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.8s;
+}
+
+.loaded svg .svg-title-12 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-13 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 2.9s;
+}
+
+.loaded svg .svg-title-13 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-14 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 3s;
+}
+
+.loaded svg .svg-title-14 {
+	fill: rgb(255, 255, 255);
+}
+
+svg .svg-title-15 {
+	fill: transparent;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 3.1s;
+}
+
+.loaded svg .svg-title-15 {
+	fill: rgb(255, 255, 255);
+}
+//Анімація заголовків support========================================================================================================================================================
+svg .svg-title-support-1 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+}
+
+._watcher-view svg .svg-title-support-1 {
+	fill: #474747;
+}
+
+svg .svg-title-support-2 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.30000000000000004s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.30000000000000004s;
+}
+
+._watcher-view svg .svg-title-support-2 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-3 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+}
+
+._watcher-view svg .svg-title-support-3 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-4 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+}
+
+._watcher-view svg .svg-title-support-4 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-5 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.6000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.6000000000000001s;
+}
+
+._watcher-view svg .svg-title-support-5 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-6 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s;
+}
+
+._watcher-view svg .svg-title-support-6 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-7 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+}
+
+._watcher-view svg .svg-title-support-7 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-8 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9000000000000001s;
+}
+
+._watcher-view svg .svg-title-support-8 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-9 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
+}
+
+._watcher-view svg .svg-title-support-9 {
+	fill: #474747;
+}
+
+svg .svg-title-support-10 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.1s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.1s;
+}
+
+._watcher-view svg .svg-title-support-10 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-11 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s;
+}
+
+._watcher-view svg .svg-title-support-11 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-12 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s;
+}
+
+._watcher-view svg .svg-title-support-12 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-13 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.4000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.4000000000000001s;
+}
+
+._watcher-view svg .svg-title-support-13 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-14 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s;
+}
+
+._watcher-view svg .svg-title-support-14 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+svg .svg-title-support-15 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-support-15 {
+	fill: rgba(228, 45, 105, 1);
+}
+svg .svg-title-support-16 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-support-16 {
+	fill: rgba(228, 45, 105, 1);
+}
+svg .svg-title-support-17 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-support-17 {
+	fill: rgba(228, 45, 105, 1);
+}
+
+//Title about========================================================================================================================================================
+
+svg .svg-title-about-1 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.2s;
+}
+
+._watcher-view svg .svg-title-about-1 {
+	fill: #fff;
+}
+
+svg .svg-title-about-2 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.30000000000000004s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.30000000000000004s;
+}
+
+._watcher-view svg .svg-title-about-2 {
+	fill: #fff;
+}
+
+svg .svg-title-about-3 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.4s;
+}
+
+._watcher-view svg .svg-title-about-3 {
+	fill: #fff;
+}
+
+svg .svg-title-about-4 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s;
+}
+
+._watcher-view svg .svg-title-about-4 {
+	fill: #fff;
+}
+
+svg .svg-title-about-5 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.6000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.6000000000000001s;
+}
+
+._watcher-view svg .svg-title-about-5 {
+	fill: #fff;
+}
+
+svg .svg-title-about-6 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.7s;
+}
+
+._watcher-view svg .svg-title-about-6 {
+	fill: #fff;
+}
+
+svg .svg-title-about-7 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.8s;
+}
+
+._watcher-view svg .svg-title-about-7 {
+	fill: #fff;
+}
+
+svg .svg-title-about-8 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 0.9000000000000001s;
+}
+
+._watcher-view svg .svg-title-about-8 {
+	fill: #fff;
+}
+
+svg .svg-title-about-9 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1s;
+}
+
+._watcher-view svg .svg-title-about-9 {
+	fill: #fff;
+}
+
+svg .svg-title-about-10 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.1s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.1s;
+}
+
+._watcher-view svg .svg-title-about-10 {
+	fill: #fff;
+}
+
+svg .svg-title-about-11 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.2s;
+}
+
+._watcher-view svg .svg-title-about-11 {
+	fill: #fff;
+}
+
+svg .svg-title-about-12 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.3s;
+}
+
+._watcher-view svg .svg-title-about-12 {
+	fill: #fff;
+}
+
+svg .svg-title-about-13 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.4000000000000001s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.4000000000000001s;
+}
+
+._watcher-view svg .svg-title-about-13 {
+	fill: #fff;
+}
+
+svg .svg-title-about-14 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.5s;
+}
+
+._watcher-view svg .svg-title-about-14 {
+	fill: #fff;
+}
+
+svg .svg-title-about-15 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-about-15 {
+	fill: #fff;
+}
+
+svg .svg-title-about-16 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-about-16 {
+	fill: #fff;
+}
+
+svg .svg-title-about-17 {
+	fill: transparent;
+	-webkit-transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+	transition: fill 2s cubic-bezier(0.39, 0.575, 0.565, 1) 1.6s;
+}
+
+._watcher-view svg .svg-title-about-17 {
+	fill: #fff;
 }
