@@ -95,6 +95,12 @@
 }
 
 .hero {
+	h1 {
+		pointer-events: none;
+		position: absolute;
+		visibility: hidden;
+		opacity: 0;
+	}
 	// .hero__bg
 	&__bg {
 		position: absolute;

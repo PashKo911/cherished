@@ -976,6 +976,12 @@ svg .svg-title-about-17 {
     margin-top: -1.25rem
   }
 }
+.hero h1 {
+  pointer-events: none;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0
+}
 .hero__bg {
   position: absolute;
   width: 100%;
