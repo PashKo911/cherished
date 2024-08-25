@@ -67,6 +67,8 @@
 
 	svg {
 		flex-shrink: 0;
+		position: relative;
+		z-index: 4;
 	}
 	path {
 		fill: var(--text-primary);
