@@ -273,7 +273,7 @@
 			&:nth-child(2) {
 				position: absolute;
 				width: 42%;
-				bottom: 31%;
+				bottom: 43%;
 				right: 0%;
 				.loaded & {
 					animation:
@@ -299,7 +299,7 @@
 		border: toRem(1) solid rgba(255, 255, 255, 0.3);
 		background-color: rgba(255, 255, 255, 0.2);
 		backdrop-filter: blur(toRem(22));
-		margin-top: toRem(-245);
+		margin-top: toRem(-309);
 		margin-right: toRem(5);
 		transform: translate(30%, 0);
 		opacity: 0;
@@ -546,7 +546,7 @@
 	}
 
 	&::after {
-		bottom: -3.9%;
+		bottom: -8%;
 	}
 	// .info__container
 	&__container {
