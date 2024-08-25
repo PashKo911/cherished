@@ -1,0 +1,45 @@
+// Header
+
+/*
+<header class="header">
+	<div class="header__container">
+
+			<a href="index.html" class="header__logo"><img src="@img/header/logo.png" alt="logotype"></a>
+
+			<div class="header__menu menu">
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a data-goto-header data-goto=".about" href="#" class="menu__link">
+								About
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+		<a data-da=".menu__body, 991.98" href="#" target="_blank" class="header__button button">
+			Buy Now
+		</a>
+		
+		<button type="button" class="menu__icon icon-menu" aria-label=" open / close menu"><span></span></button>
+	</div>
+</header>
+*/
+
+// Тінь навколо тексту заголовку
+
+/*
+text-shadow:
+toEm(8, 335) toEm(8, 335) 0 #000,
+toEm(-8, 335) toEm(-8, 335) 0 #000,
+toEm(8, 335) toEm(-8, 335) 0 #000,
+toEm(-8, 335) toEm(8, 335) 0 #000,
+0 toEm(8, 335) 0 #000,
+0 toEm(-8, 335) 0 #000,
+toEm(-8, 335) 0 0 #000,
+toEm(8, 335) 0 0 #000,
+toEm(-8, 335) toEm(14, 335) 0 #000,
+toEm(8, 335) toEm(14, 335) 0 #000,
+0 toEm(14, 335) 0 #000;
+*/

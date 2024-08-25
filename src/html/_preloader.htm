@@ -1,0 +1,267 @@
+<!-- Документація: https://template.fls.guru/template-docs/modul-preloader.html -->
+<div id="fls-preloader">
+	<!-- Скріпт прелоадера -->
+	<script>
+
+		//Прелоадер коло свг========================================================================================================================================================
+		function preloader() {
+			const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+
+			// Налаштування
+			const bgColor = '#151515'
+			const stroke = '#87f55b'
+			const fill = '#f796bf'
+			const strokeWidth = 2.6 + '%'
+
+			if (preloaderImages.length) {
+				const preloaderStyleTemplate = `
+				<style>
+					* {
+						padding: 0px;
+						margin: 0px;
+						border: 0px;
+						box-sizing: border-box;
+					}
+					/* Головний блок */
+					#fls-preloader{
+						pointer-events: none;
+						z-index: -1;
+						position: fixed;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						display: flex;
+						justify-content:center;
+						align-items: center;
+						background-color: ${bgColor};
+						transition: opacity 0.3s ease, visibility 0.3s ease ;
+					}
+					/* Блок з елементами */
+					.fls-preloader-body{
+						position: relative;
+						width: 40%;
+						aspect-ratio: 1;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: center;
+					}
+
+					.preloader-counter{
+						position: relative;
+						font-size: clamp(1rem, -0.8rem + 9vw, 10rem);
+						font-family: system-ui, sans-serif;
+						font-weight: bold;
+					}
+
+					.lock body{
+						// overflow: hidden;
+						touch-action: none;
+						overscroll-behavior: none;
+					}
+				
+				</style>`;
+
+				document.head.insertAdjacentHTML("beforeend", preloaderStyleTemplate);
+
+				const preloaderTemplate = document.querySelector('#fls-preloader');
+
+				const preloaderBody = document.createElement('div');
+				preloaderBody.classList.add('fls-preloader-body');
+
+				const preloaderBodyWidth = preloaderTemplate.appendChild(preloaderBody).offsetWidth;
+
+				const preloaderPrg = `
+						<svg style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; fill: ${fill}; stroke: ${stroke}; stroke-width: ${strokeWidth};">
+							<circle class="preloader-circle" stroke-linecap="round" cx=${preloaderBodyWidth / 2} cy=${preloaderBodyWidth / 2} r="${(preloaderBodyWidth * (1 - (parseFloat(strokeWidth) / 100))) / 2}"></circle>
+						</svg>
+						<div class="preloader-counter"> 
+						</div>
+				`
+
+
+
+				preloaderBody.insertAdjacentHTML('beforeend', preloaderPrg);
+				document.body.appendChild(preloaderTemplate);
+
+				const counter = document.querySelector('.preloader-counter')
+				console.log(counter)
+
+				const preloaderCircle = document.querySelector('.preloader-circle')
+				const totalLength = preloaderCircle.getTotalLength()
+
+
+				preloaderCircle.setAttribute('stroke-dasharray', totalLength)
+				preloaderCircle.setAttribute('stroke-dashoffset', totalLength)
+
+				setTimeout(() => {
+					preloaderCircle.style.transition = 'stroke-dashoffset 0.3s linear';
+				}, 0);
+
+				htmlDocument = document.documentElement;
+				let imagesLoadedCount = progress = 0;
+
+				htmlDocument.classList.add('loading');
+				htmlDocument.classList.add('lock');
+
+				preloaderImages.forEach(preloaderImage => {
+					const imgClone = document.createElement('img');
+					if (imgClone) {
+						imgClone.onload = imageLoaded;
+						imgClone.onerror = imageLoaded;
+						preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+					}
+				});
+
+				function setValueProgress(progress) {
+					counter.textContent = 100 - (progress * 100 / totalLength | 0) + '%';
+					preloaderCircle.setAttribute('stroke-dashoffset', progress)
+				}
+
+				function imageLoaded() {
+					imagesLoadedCount++;
+					progress = (totalLength / preloaderImages.length) * imagesLoadedCount;
+					setValueProgress(totalLength - progress)
+
+					if (Math.floor(progress) + 1 >= Math.floor(totalLength)) {
+						addLoadedClass()
+					} else null
+				}
+
+				function addLoadedClass() {
+					htmlDocument.classList.add('loaded');
+					htmlDocument.classList.remove('lock');
+					htmlDocument.classList.remove('loading');
+					setInterval(() => {
+						preloaderTemplate.remove();
+					}, 100);
+				}
+			} else {
+				preloaderTemplate.remove();
+			}
+		}
+		preloader();
+
+
+		//Прелоадер Жені========================================================================================================================================================
+		/*
+		function preloader() {
+					const preloaderImages = document.querySelector('[data-preloader]') ? document.querySelectorAll('[data-preloader] img') : document.querySelectorAll('img');
+					const preloaderContainer = document.querySelector('#fls-preloader');
+					if (preloaderImages.length) {
+						const preloaderStyleTemplate =`
+						<style>
+							* {
+								padding: 0px;
+								margin: 0px;
+								border: 0px;
+								box-sizing: border-box;
+							}
+							.fls-preloader{
+								pointer-events: none;
+								z-index: -1;
+								position: fixed;
+								width: 100%;
+								height: 100%;
+								top: 0;
+								left: 0;
+								display: flex;
+								justify-content:center;
+								align-items: center;
+							}
+							.fls-preloader__body{
+								padding: 0.93rem;
+								max-width: 31.25rem;
+								display: flex;
+								flex-direction: column;
+							}
+							.fls-preloader__counter{
+								font-size: 10rem;
+							}
+							.fls-preloader__line{}
+							.fls-preloader__line span{
+								display: inline-block;
+								transition: width 0.2s ease;
+								height: 0.8rem;
+								background-color: #7A956B;
+							}
+							.lock body{
+								overflow: hidden;
+								touch-action: none;
+								overscroll-behavior: none;
+							}
+							.loading body>*:not(.fls-preloader){
+								opacity: 0;
+								visibility: hidden;
+							}
+							.loaded body>*:not(.fls-preloader){
+								transition: opacity 0.5s ease 0s;
+								opacity: 1;
+								visibility: visible;
+							}
+						</style>`;
+						
+						document.head.insertAdjacentHTML("beforeend",preloaderStyleTemplate);
+		
+						const preloaderTemplate =`
+							<div class="fls-preloader">
+								<div class="fls-preloader__body">
+									<div class="fls-preloader__counter">0%</div>
+									<div class="fls-preloader__line"><span></span></div>
+								</div>
+							</div>`;
+						document.body.insertAdjacentHTML("beforeend",preloaderTemplate);
+		
+						const
+							preloader = document.querySelector('.fls-preloader'),
+							showPecentLoad = document.querySelector('.fls-preloader__counter'),
+							showLineLoad = document.querySelector('.fls-preloader__line span'),
+							htmlDocument = document.documentElement;
+		
+						let imagesLoadedCount = counter = progress = 0;
+						
+						htmlDocument.classList.add('loading');
+						htmlDocument.classList.add('lock');
+		
+						preloaderImages.forEach(preloaderImage => {
+							const imgClone = document.createElement('img');
+							if (imgClone) {
+								imgClone.onload = imageLoaded;
+								imgClone.onerror = imageLoaded;
+								preloaderImage.dataset.src ? imgClone.src = preloaderImage.dataset.src : imgClone.src = preloaderImage.src;
+							}
+						});
+						function setValueProgress(progress) {
+							showPecentLoad ? showPecentLoad.innerText = `${progress}%`: null;
+							showLineLoad ? showLineLoad.style.width = `${progress}%` : null;
+						}
+						showPecentLoad ? setValueProgress(progress) : null;
+		
+						function imageLoaded() {
+							imagesLoadedCount++;
+							progress = Math.round((100 / preloaderImages.length) * imagesLoadedCount);
+							const intervalId = setInterval(() => {
+								counter >= progress ? clearInterval(intervalId) : setValueProgress(++counter);
+								counter >= 100 ? addLoadedClass() : null;
+							}, 10);
+						}
+						function addLoadedClass() {
+							htmlDocument.classList.add('loaded');
+							htmlDocument.classList.remove('lock');
+							htmlDocument.classList.remove('loading');
+							setInterval(() => {
+								preloader.remove();
+								preloaderContainer.remove();
+							}, 500);
+						}
+					}else{
+						preloaderContainer.remove();
+					}
+				}
+				preloader();
+		*/
+
+
+	</script>
+</div>
